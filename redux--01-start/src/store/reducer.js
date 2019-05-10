@@ -30,6 +30,17 @@ const reducer = (state = initialState, action) => {
         // push affects the original state, not a good practice
         results: state.results.concat({ id: new Date(), value: state.counter })
       };
+    case "DELETE_RESULT":
+      // const id = 2;
+      // const newArray = [...state.results];
+      // newArray.splice(id, 1);
+      const updatedArray = state.results.filter(
+        result => result.id !== action.resultId
+      );
+      return {
+        ...state,
+        results: updatedArray
+      };
     default:
       return state;
   }
