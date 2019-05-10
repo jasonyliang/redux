@@ -24,6 +24,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         counter: state.counter - action.value
       };
+    case "STORE_RESULT":
+      return {
+        ...state,
+        // push affects the original state, not a good practice
+        results: state.results.concat({ id: new Date(), value: state.counter })
+      };
     default:
       return state;
   }
