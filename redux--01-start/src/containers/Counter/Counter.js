@@ -11,7 +11,7 @@ import {
   subtract,
   store_result,
   delete_result
-} from "../../store/actions/actions";
+} from "../../store/actions/index";
 
 class Counter extends Component {
   state = {
